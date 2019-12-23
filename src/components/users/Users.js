@@ -1,18 +1,29 @@
 import React, { Component } from 'react'
-import UserItem from './UserItem'
+import UserItem from './UserItem';
+import Spinner from '../layout/Spinner'
+import PropTypes from 'prop-types'
 
-class Users extends Component {
 
-    render() {
+const Users = ({users,loading}) =>{
+// const Users = (props) =>{
+    if(loading){
+        return <Spinner />
+    }else{
         return (
             <div style={userStyle}>
-                {this.props.users
+                {   users
                     .map(user=>(
                     <UserItem key={user.id} user={user} />
                 ))}
             </div>
-        )
+        );
     }
+}
+
+
+Users.propTypes = {
+    users: PropTypes.array.isRequired,
+    loading :PropTypes.bool.isRequired,
 }
 
 
