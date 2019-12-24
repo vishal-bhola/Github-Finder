@@ -5,9 +5,15 @@ export class Search extends Component {
         text:''
     }
 
+    static propTypes = {
+       searchUsers:  PropTypes.func.isRequired,
+    }
+
     onSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.text)
+        // console.log(this.state.text);
+        this.props.searchUsers(this.state.text);
+        this.setState({ text:'' });
     }
 
     onChange = (e) => {
