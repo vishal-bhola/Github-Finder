@@ -5,7 +5,9 @@ import Users from './components/users/Users';
 import Search from './components/users/Search';
 import Alert from './components/layout/Alert';
 import About from './components/pages/About';
+import NotFound from './components/pages/NotFound';
 import User from './components/users/User';
+import Home from './components/pages/Home';
 // import axios from 'axios';
 
 import GithubState from './context/github/GithubState';
@@ -83,18 +85,21 @@ const App =() =>{
               // alert={alert} 
               />
               <Switch>
-                <Route exact path="/" render={ props => (
-                  <Fragment>
-                    <Search
-                      // searchUsers={searchUsers}
-                      // clearUsers={clearUsers} 
-                      // showClear={ users.length>0 ? true : false } 
-                      // setAlert={showAlert}
-                    />
-                    {/* <Users loading={loading} users={users} />  */}
-                    <Users />
-                  </Fragment>
-                )} />
+                <Route exact path="/"
+                //  render={ props => (
+                //   <Fragment>
+                //     <Search
+                //       // searchUsers={searchUsers}
+                //       // clearUsers={clearUsers} 
+                //       // showClear={ users.length>0 ? true : false } 
+                //       // setAlert={showAlert}
+                //     />
+                //     {/* <Users loading={loading} users={users} />  */}
+                //     <Users />
+                //   </Fragment>
+                // )} 
+                component={Home}
+                />
 
                 <Route exact path='/about' component={About} />
 
@@ -111,6 +116,7 @@ const App =() =>{
                 //   />
                 // )}
                 />
+                <Route component={NotFound} />
 
               </Switch>
             </div>
