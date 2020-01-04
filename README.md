@@ -1,4 +1,4 @@
-### Overview
+# Overview
 
 This is a react-based project where you can search users which have github account.
 
@@ -15,6 +15,6 @@ Profile of user includes its :-
 
 
 
-### Preview
+# Preview
 
 Have a look at the project [here](https://githubfinder1767.netlify.com/).
